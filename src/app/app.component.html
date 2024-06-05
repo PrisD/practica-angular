@@ -225,8 +225,15 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+          <h2>{{ nombreTitular}} y {{ nombreAula }}</h2>
+          <p><input class="demo" minlength="0"  maxlength="25" [value]="nombreTitular" #Inputtitulo (keyup)="OnKeyUp(Inputtitulo.value, 'titulo')" /></p>
+          <p><input class="demo" [value]="nombreAula" #InputAula (keyup)="OnKeyUp(InputAula.value, 'aula')" /></p>
+          <div class="errores">
+            @if (nombreTitular.length<4) {<p>Minimo 4 char</p>}
+            @if (nombreAula.length==0) {<p>Aula no puede ser vacío</p>}
+            @if (nombreTitular.length>20) {<p>Titular mayor a 20</p>}
+          </div>
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

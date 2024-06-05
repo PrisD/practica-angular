@@ -9,5 +9,20 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'AngularDemo';
+
+  
+  data = {
+    titulo: 'Demo DSW',
+    description: 'Desarrollo de Software'
+  }
+  nombreTitular = 'Nombre titular';
+  nombreAula = 'Nombre aula';
+
+  OnKeyUp(input: string, field: string) {
+    if (field === 'titulo') {
+      this.nombreTitular = input;
+    } else if (field === 'aula') {
+      this.nombreAula = input;
+    }
+  }
 }
